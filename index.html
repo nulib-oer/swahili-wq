@@ -1,0 +1,2597 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Peter Mwangi" />
+  <title>Elementary Swahili</title>
+  <style>
+    html {
+      line-height: 1.5;
+      font-family: DejaVu Sans;
+      font-size: 20px;
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      word-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* Vocabulary */
+
+    dl {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        border: 2px solid #716c6b;
+    }
+
+    dt {
+        font-weight: bold;
+        margin: 0;
+        padding: 1em;
+        border-bottom: 1px solid rgba(0,0,0,.2);
+        text-align: left; 
+    }
+
+    dt::after {
+        content: ":"; 
+    }
+
+    dd {
+        margin: 0;
+        padding: 1em;
+        border-bottom: 1px solid rgba(0,0,0,.2); 
+    }
+
+    dd p {
+        margin: 0;
+    }
+
+    /* text colors */ 
+
+    .r { color: red; font-weight: bold; }
+    .b { color: blue; font-weight: bold; }
+    .p { color: purple; font-weight: bold; }
+    .g { color: green; font-weight: bold; }
+    .y { color: yellow; font-weight: bold; background: #444; }
+    .gr { color: grey; font-weight: bold; }
+    .pi { color: pink; font-weight: bold; }
+    .br { color: brown; font-weight: bold; }
+    .o { color: orange; font-weight: bold; }
+
+    /*
+     * Custom CSS file. Override it as you like.
+     *
+     * Credits to @killercup (https://gist.github.com/killercup); Extracted from this Gist:
+     *   https://gist.github.com/killercup/5917178
+     */
+
+    html {
+        font-size: 100%;
+        overflow-y: scroll;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    body {
+        color: #444;
+        font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+        font-size: 12px;
+        line-height: 1.7;
+        padding: 1em;
+        margin: auto;
+        max-width: 42em;
+        background: #fefefe;
+    }
+
+    a {
+        color: #0645ad;
+        text-decoration: none;
+    }
+
+    a:visited {
+        color: #0b0080;
+    }
+
+    a:hover {
+        color: #06e;
+    }
+
+    a:active {
+        color: #faa700;
+    }
+
+    a:focus {
+        outline: thin dotted;
+    }
+
+    *::-moz-selection {
+        background: rgba(255, 255, 0, 0.3);
+        color: #000;
+    }
+
+    *::selection {
+        background: rgba(255, 255, 0, 0.3);
+        color: #000;
+    }
+
+    a::-moz-selection {
+        background: rgba(255, 255, 0, 0.3);
+        color: #0645ad;
+    }
+
+    a::selection {
+        background: rgba(255, 255, 0, 0.3);
+        color: #0645ad;
+    }
+
+    p {
+        margin: 1em 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #111;
+        line-height: 125%;
+        margin-top: 2em;
+        font-weight: normal;
+    }
+
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.2em;
+    }
+
+    h5 {
+        font-size: 1em;
+    }
+
+    h6 {
+        font-size: 0.9em;
+    }
+
+    blockquote {
+        color: #666666;
+        margin: 0;
+        padding-left: 3em;
+        border-left: 0.5em #EEE solid;
+    }
+
+    hr {
+        display: block;
+        height: 2px;
+        border: 0;
+        border-top: 1px solid #aaa;
+        border-bottom: 1px solid #eee;
+        margin: 1em 0;
+        padding: 0;
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+        color: #000;
+        font-family: monospace, monospace;
+        _font-family: 'courier new', monospace;
+        font-size: 0.98em;
+    }
+
+    pre {
+        white-space: pre;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    b,
+    strong {
+        font-weight: bold;
+    }
+
+    dfn {
+        font-style: italic;
+    }
+
+    ins {
+        background: #ff9;
+        color: #000;
+        text-decoration: none;
+    }
+
+    mark {
+        background: #ff0;
+        color: #000;
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    sub,
+    sup {
+        font-size: 75%;
+        line-height: 0;
+        position: relative;
+        vertical-align: baseline;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    ul,
+    ol {
+        margin: 1em 0;
+        padding: 0 0 0 2em;
+    }
+
+    li p:last-child {
+        margin-bottom: 0;
+    }
+
+    ul ul,
+    ol ol {
+        margin: .3em 0;
+    }
+
+    img {
+        border: 0;
+        -ms-interpolation-mode: bicubic;
+        vertical-align: middle;
+    }
+
+    figure {
+        display: block;
+        text-align: center;
+        margin: 1em 0;
+    }
+
+    figure img {
+        border: none;
+        margin: 0 auto;
+    }
+
+    figcaption {
+        font-size: 0.8em;
+        font-style: italic;
+        margin: 0 0 .8em;
+    }
+
+    table {
+        margin-bottom: 2em;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    table th {
+        padding: .2em 1em;
+        background-color: #eee;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+    }
+
+    table td {
+        padding: .2em 1em;
+        border-top: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        vertical-align: top;
+    }
+
+    .author {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 480px) {
+        body {
+            font-size: 14px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        body {
+            font-size: 16px;
+        }
+    }
+
+    @media print {
+        * {
+            background: transparent !important;
+            color: black !important;
+            filter: none !important;
+            -ms-filter: none !important;
+        }
+        body {
+            font-size: 12pt;
+            max-width: 100%;
+        }
+        a,
+        a:visited {
+            text-decoration: underline;
+        }
+        hr {
+            height: 1px;
+            border: 0;
+            border-bottom: 1px solid black;
+        }
+        a[href]:after {
+            content: " (" attr(href) ")";
+        }
+        abbr[title]:after {
+            content: " (" attr(title) ")";
+        }
+        .ir a:after,
+        a[href^="javascript:"]:after,
+        a[href^="#"]:after {
+            content: "";
+        }
+        pre,
+        blockquote {
+            border: 1px solid #999;
+            padding-right: 1em;
+            page-break-inside: avoid;
+        }
+        tr,
+        img {
+            page-break-inside: avoid;
+        }
+        img {
+            max-width: 100% !important;
+        }
+        @page :left {
+            margin: 15mm 20mm 15mm 10mm;
+        }
+        @page :right {
+            margin: 15mm 10mm 15mm 20mm;
+        }
+        p,
+        h2,
+        h3 {
+            orphans: 3;
+            widows: 3;
+        }
+        h2,
+        h3 {
+            page-break-after: avoid;
+        }
+    }  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Elementary Swahili</h1>
+<p class="subtitle">Lugha na Utamaduni</p>
+<p class="author">Peter Mwangi</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#kukanushanegation-in-swahili">1. Kukanusha/Negation in Swahili</a>
+<ul>
+<li><a href="#vikanushi-katika-swahilinegators-in-swahili">Vikanushi katika Swahili/Negators in Swahili</a></li>
+<li><a href="#negating-the-past-tense--li-">Negating the past tense (-li-)</a></li>
+<li><a href="#negating-the-present-tense--na-">Negating the present tense (-na-)</a></li>
+<li><a href="#negating-the-future-tense--ta-">Negating the future tense (-ta-)</a></li>
+<li><a href="#negating-the-past-perfect-tense--me-">Negating the Past Perfect Tense (-me-)</a></li>
+</ul></li>
+<li><a href="#saa-katika-swahilitime-in-swahili">2. Saa katika Swahili/Time in Swahili</a>
+<ul>
+<li><a href="#utanguliziintroduction">Utangulizi/Introduction</a></li>
+<li><a href="#ramani-ya-afrikamap-of-afrika">Ramani ya Afrika/Map of Afrika</a></li>
+<li><a href="#saa-ya-kiswahili">Saa ya Kiswahili</a></li>
+<li><a href="#msamiati-wa-saatime-vocabulary">Msamiati wa Saa/Time Vocabulary</a></li>
+<li><a href="#mfanoexample">Mfano/Example</a></li>
+</ul></li>
+<li><a href="#siku-za-wikijuma-days-of-the-week">3. Siku za Wiki/Juma – Days of the Week</a>
+<ul>
+<li><a href="#utanguliziintroduction-1">Utangulizi/Introduction</a></li>
+<li><a href="#siku-za-wikijuma">Siku za Wiki/Juma</a></li>
+<li><a href="#je-leo-ni-siku-ganini-siku-gani-leo">Je, leo ni siku gani?/Ni siku gani leo?</a></li>
+<li><a href="#sarufigrammar">Sarufi/Grammar</a></li>
+<li><a href="#kalenda-januari-2020">Kalenda – Januari 2020</a></li>
+<li><a href="#kusema-tarehedate">Kusema tarehe/date</a></li>
+</ul></li>
+<li><a href="#miezimonths">4. Miezi/Months</a></li>
+<li><a href="#mboga-na-matunda">5. Mboga na Matunda</a>
+<ul>
+<li><a href="#noun-classes-in-swahili-and-fruits-and-vegetables">Noun Classes in Swahili and Fruits and Vegetables</a></li>
+<li><a href="#sokoni">Sokoni</a></li>
+<li><a href="#msamiati-wa-sokonimarketplace-vocabulary">Msamiati wa Sokoni/Marketplace Vocabulary</a></li>
+<li><a href="#kuuliza-beiinquiring-the-prices">Kuuliza bei/Inquiring the prices</a></li>
+<li><a href="#kuagizaordering-or-requesting-for-the-items">Kuagiza/ordering or requesting for the items</a></li>
+<li><a href="#mazungumzo-i">Mazungumzo I</a></li>
+<li><a href="#kupatana-beiagreeing-on-the-price">Kupatana Bei/Agreeing on the Price</a></li>
+<li><a href="#mazungumzo-ii">Mazungumzo II</a></li>
+</ul></li>
+<li><a href="#vyakula-na-vinywajifood-and-drinks">6. Vyakula na Vinywaji/Food and Drinks</a>
+<ul>
+<li><a href="#msamiativocabulary">Msamiati/Vocabulary</a></li>
+<li><a href="#vyakula">Vyakula</a></li>
+<li><a href="#vinywaji-maarufu-afrika-mashariki">Vinywaji Maarufu Afrika Mashariki</a></li>
+</ul></li>
+<li><a href="#kahawani-au-mgahawaniat-the-restaurant">7. kahawani au Mgahawani/At the Restaurant</a>
+<ul>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#msamiati-wa-mkahawanirestaurant-vocabulary">Msamiati wa Mkahawani/Restaurant Vocabulary</a></li>
+<li><a href="#mazungumzo-i-kununua-chakula-cha-asubuhi">Mazungumzo I: Kununua Chakula cha Asubuhi</a></li>
+</ul></li>
+<li><a href="#rangicolors">8. Rangi/Colors</a>
+<ul>
+<li><a href="#majina-ya-rangi-kwa-kiswahili">Majina ya Rangi kwa Kiswahili</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="kukanushanegation-in-swahili">1. Kukanusha/Negation in Swahili</h1>
+<p>In Swahili, we negate the personal pronoun markers in the verb as well as the tenses. Remember that we have 3 personal pronouns both in singular and plural.</p>
+<blockquote>
+<p><strong>Zoezi I: Personal Pronoun Markers</strong></p>
+<p>Fill out the table below of Swahili pronouns and their markers while using the verb <em>soma</em> and any tenses such that you end up marking the pronoun/subject and tense markers in the verb <em>soma</em>.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kiwakilishi/Personal Pronoun</th>
+<th style="text-align: left;">Umoja/Singular</th>
+<th style="text-align: left;">Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1<sup>st</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2<sup>nd</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3<sup>rd</sup></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi II: Nyakati za Kiswahili</strong></p>
+<p>Unakumbuka nyakati gani za Kiswahili? /Which Swahili tenses do you remember?</p>
+<ol type="i">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</blockquote>
+<h2 id="vikanushi-katika-swahilinegators-in-swahili">Vikanushi katika Swahili/Negators in Swahili</h2>
+<p>We shall derive the negators from the <em>jambo</em> greetings across all the three persons both in singular and plural.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Kiwakilishi/Personal Pronoun</th>
+<th style="text-align: left;">Umoja/Singular</th>
+<th style="text-align: left;">Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1<sup>st</sup></td>
+<td style="text-align: left;">Mimi <span class="r">Si</span>jambo</td>
+<td style="text-align: left;">Sisi <span class="r">ha</span><span class="b">tu</span>jambo</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2<sup>nd</sup></td>
+<td style="text-align: left;">Wewe <span class="r">hu</span>jambo</td>
+<td style="text-align: left;">Nyinyi <span class="r">ha</span><span class="b">m</span>jambo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3<sup>rd</sup></td>
+<td style="text-align: left;">Yeye <span class="r">ha</span>jambo</td>
+<td style="text-align: left;">Wao <span class="r">ha</span><span class="b">wa</span>jambo</td>
+</tr>
+</tbody>
+</table>
+<p>The negators for each personal pronoun are shown in red in the table above. Note that in plural form, the negator precedes the subject markers that are shown in blue.</p>
+<p>We shall now negate the different Swahili tenses that we have learned so far.</p>
+<h2 id="negating-the-past-tense--li-">Negating the past tense (-li-)</h2>
+<p>When negating the past tense, the tense marker, -li- changes into -ku-. Thus, -ku- occupies the slot that -li- occupies in affirmative sentences. See the examples below.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 32%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kiwakilishi/Personal Pronoun</th>
+<th>Umoja/Singular</th>
+<th>Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>1<sup>st</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Mimi niliandika insha</p>
+<p>Mimi <span class="r">si</span><span class="p">ku</span>andika insha</p></td>
+<td><p>Sisi tuliandika insha</p>
+<p>Sisi <span class="r">ha</span><span class="b">tu</span><span class="p">ku</span>andika insha</p></td>
+</tr>
+<tr class="even">
+<td><p>2<sup>nd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Wewe uliandika insha</p>
+<p>Wewe <span class="r">hu</span><span class="p">ku</span>andika insha</p></td>
+<td><p>Nyinyi mliandika insha</p>
+<p>Nyinyi <span class="r">ha</span><span class="b">m</span><span class="p">ku</span>andika insha</p></td>
+</tr>
+<tr class="odd">
+<td><p>3<sup>rd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Yeye aliandika insha</p>
+<p>Yeye <span class="r">ha</span><span class="p">ku</span>andika insha</p></td>
+<td><p>Wao waliandika insha</p>
+<p>Wao <span class="r">ha</span><span class="b">wa</span><span class="p">ku</span>andika insha</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi III: Kukanusha Wakati Uliopita</strong></p>
+<p><strong>Kanusha sentensi hizi katika vikundi vya watu wawili wawili kuhusu shughuli za wikendi.</strong></p>
+<ol type="i">
+<li><p>Mimi <strong>nilienda</strong> filamuni pamoja na rafiki yangu.</p></li>
+<li><p>Wewe <strong>ulicheza</strong> michezo ya video peke yako.</p></li>
+<li><p>Yeye <strong>alitembelea</strong> mji wa Chicago kwa treni.</p></li>
+<li><p>Sisi <strong>tulitembea</strong> karibu na Ziwa Michigan.</p></li>
+<li><p>Nyinyi <strong>mlisoma</strong> maktabani.</p></li>
+<li><p>Wao <strong>walipika</strong> chakula cha jioni.</p></li>
+</ol>
+</blockquote>
+<h2 id="negating-the-present-tense--na-">Negating the present tense (-na-)</h2>
+<p>To understand how the negation involving the present tense works, write down any 10 Swahili verbs that you know below.</p>
+<blockquote>
+<p><strong>Zoezi IV: Vitenzi vya Kiswahili</strong></p>
+<ol type="i">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</blockquote>
+<p>What have you noticed about the verbs that you have written above?</p>
+<p>Swahili is a bantu language and for this reason, many verbs end with <strong>-a</strong>. However, Swahili has borrowed some verbs from other languages such as Arabic. Such borrowed verbs do not end with -a. Examples of such verbs include safari/travel, jaribu/try, tafsiri/translate, etc.</p>
+<p>The final vowel, <strong>-a</strong>, in the affirmative form changes into <strong>-i</strong> in the negative form. However, if the verb does not end with an <strong>-a</strong> in its affirmative form, the final vowel does not change in the negative form. See the examples below.</p>
+<table>
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 33%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kiwakilishi/Personal Pronoun</th>
+<th>Umoja/Singular</th>
+<th>Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>1<sup>st</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Mimi ninaandika insha</p>
+<p>Mimi <span class="r">si</span>andik<span class="g">i</span> insha</p></td>
+<td><p>Sisi tunaandika insha</p>
+<p>Sisi <span class="r">ha</span><span class="b">tu</span>andik<span class="g">i</span> insha</p></td>
+</tr>
+<tr class="even">
+<td><p>2<sup>nd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Wewe unaandika insha</p>
+<p>Wewe <span class="r">hu</span>andik<span class="g">i</span> insha</p></td>
+<td><p>Nyinyi mnaandika insha</p>
+<p>Nyinyi <span class="r">ha</span>muandik<span class="g">i</span> insha</p></td>
+</tr>
+<tr class="odd">
+<td><p>3<sup>rd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Yeye anaandika insha</p>
+<p>Yeye <span class="r">ha</span>andik<span class="g">i</span> insha</p></td>
+<td><p>Wao wanaandika insha</p>
+<p>Wao <span class="r">ha</span><span class="b">wa</span>andik<span class="g">i</span> insha</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi V: Kukanusha Wakati Uliopo</strong></p>
+<p><strong>Kanusha sentensi zifuatazo kuhusu shughuli za kila siku.</strong></p>
+<ol type="i">
+<li><p>Mimi ninaamka mapema kila siku.</p></li>
+<li><p>Wewe unaenda chuoni kwa basi.</p></li>
+<li><p>Yeye anasoma Swahili.</p></li>
+<li><p>Sisi tunasikiliza muziki jioni.</p></li>
+<li><p>Nyinyi mnafanya mazoezi wikendi.</p></li>
+<li><p>Wao wanapika chakula kitamu.</p></li>
+</ol>
+</blockquote>
+<p>N.B. the habitual tense, hu- is negated the same way the present tense is negated. This is because the -na- tense can serve two purposes depending on the context, either as a present tense or habitual tense.</p>
+<blockquote>
+<p><strong>Zoezi VI: Kukanusha Wakati wa Mazoea</strong></p>
+<p><strong>Kanusha sentensi zifuatazo kuhusu shughuli za kila siku</strong></p>
+<ol type="i">
+<li><p>Mimi hucheza karata kila jioni.</p></li>
+<li><p>Wewe huenda chuoni kwa baiskeli.</p></li>
+<li><p>Yeye husoma maktabani mchana.</p></li>
+<li><p>Sisi hutazama televisheni kabla ya kulala.</p></li>
+<li><p>Nyinyi humtembeza mbwa asubuhi.</p></li>
+<li><p>Wao huoga baada ya kusoma.</p></li>
+</ol>
+</blockquote>
+<h2 id="negating-the-future-tense--ta-">Negating the future tense (-ta-)</h2>
+<p>The future tense is the easiest to negate because you just need to insert the negator. See the examples below.</p>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 30%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kikwakilishi/Personal Pronoun</th>
+<th>Umoja/Singular</th>
+<th>Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>1<sup>st</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Mimi nitaandika insha</p>
+<p>Mimi <span class="r">si</span>taandika insha</p></td>
+<td><p>Sisi tutaandika insha</p>
+<p>Sisi <span class="r">ha</span><span class="b">tu</span>taandika insha</p></td>
+</tr>
+<tr class="even">
+<td><p>2<sup>nd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Wewe utaandika insha</p>
+<p>Wewe <span class="r">hu</span>taandika insha</p></td>
+<td><p>Nyinyi mtaandika insha</p>
+<p>Nyinyi <span class="r">ha</span><span class="b">m</span>taandika insha</p></td>
+</tr>
+<tr class="odd">
+<td><p>3<sup>rd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Yeye ataandika insha</p>
+<p>Yeye <span class="r">ha</span>taandika insha</p></td>
+<td><p>Wao wataandika insha</p>
+<p>Wao <span class="r">ha</span><span class="b">wa</span>taandika insha</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi VII: Kukanusha Wakati Ujao</strong></p>
+<p><strong>Kanusha sentensi zifuatazo kuhusu mipango ya wikendi ijayo.</strong></p>
+<ol type="i">
+<li><p>Mimi nitaenda kumtembelea kakangu katika jimbo la Florida.</p></li>
+<li><p>Wewe utasafiri Afrika Mashariki.</p></li>
+<li><p>Yeye atacheza besiboli chuoni.</p></li>
+<li><p>Sisi tutaogelea katika pwani ya Florida.</p></li>
+<li><p>Nyinyi mtakula chakula cha Afrika Mashariki.</p></li>
+<li><p>Wao watakaa katika bweni la Lincoln.</p></li>
+</ol>
+</blockquote>
+<h2 id="negating-the-past-perfect-tense--me-">Negating the Past Perfect Tense (-me-)</h2>
+<p>The past perfect tense indicates that an action has happened a while ago. In the negative form, <strong>-me-</strong> changes to <strong>-ja-</strong>. Look at the examples shown below.</p>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 32%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Kiwakilishi/Personal Pronoun</th>
+<th>Umoja/Singular</th>
+<th>Wingi/Plural</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>1<sup>st</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Mimi nimeandika insha</p>
+<p>Mimi <span class="r">si</span><span class="j">ja</span>andika insha</p></td>
+<td><p>Sisi tumeandika insha</p>
+<p>Sisi <span class="r">ha</span><span class="b">tu</span><span class="g">ja</span>andika insha</p></td>
+</tr>
+<tr class="even">
+<td><p>2<sup>nd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Wewe umeandika insha</p>
+<p>Wewe <span class="r">hu</span><span class="g">ja</span>andika insha</p></td>
+<td><p>Nyinyi mmeandika insha</p>
+<p>Nyinyi <span class="r">ha</span><span class="b">m</span><span class="g">ja</span>andika insha</p></td>
+</tr>
+<tr class="odd">
+<td><p>3<sup>rd</sup> +ve</p>
+<p>-ve</p></td>
+<td><p>Yeye ameandika insha</p>
+<p>Yeye <span class="r">ha</span><span class="g">ja</span>ndika insha</p></td>
+<td><p>Wao wameandika insha</p>
+<p>Wao <span class="r">ha</span><span class="b">wa</span><span class="g">ja</span>andika insha</p></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi VIII: Kukanusha Hali Timilifu</strong></p>
+<p><strong>Kanusha sentensi hizi kuhusu shughuli za kila siku</strong></p>
+<ol type="i">
+<li><p>Mimi nimechoka sana.</p></li>
+<li><p>Wewe umelala mapema.</p></li>
+<li><p>Yeye ameenda chuoni.</p></li>
+<li><p>Sisi tumerudi nyumbani.</p></li>
+<li><p>Nyinyi mumefurahi sana leo.</p></li>
+<li><p>Wao wamekwea mlima mrefu.</p></li>
+</ol>
+</blockquote>
+<h1 id="saa-katika-swahilitime-in-swahili">2. Saa katika Swahili/Time in Swahili</h1>
+<h2 id="utanguliziintroduction">Utangulizi/Introduction</h2>
+<p>The East African countries are located along the equator. In fact, the equator divides Kenya into almost two equal halves. Because of this, East African countries experience almost equal hours of daylight and night throughout the year. Thus, there are 12 hours of daylight and 12 hours of night time. For this reason, the Swahili clock differs from the western clock in that, whereas the western day starts counting at midnight, the Swahili day starts counting at 6 am when the sun rises. Hence, 7 am becomes 1 hour after sunrise. Please see the pictures shown below.</p>
+<h2 id="ramani-ya-afrikamap-of-afrika">Ramani ya Afrika/Map of Afrika</h2>
+<figure>
+<img src="images/equator.png" style="width:50.0%" alt="Image result for equator line in east africa" /><figcaption aria-hidden="true">Image result for equator line in east africa</figcaption>
+</figure>
+<h2 id="saa-ya-kiswahili">Saa ya Kiswahili</h2>
+<figure>
+<img src="images/east-west-clock.png" style="width:50.0%" alt="Clock" /><figcaption aria-hidden="true">Clock</figcaption>
+</figure>
+<p>The time shown inside the clock refers to the western time while the time shown outside the clock refers to the East African time. Depending on the time of the day: asubuhi, mchana, jioni, or usiku, you could read the time shown above in swahili either as:</p>
+<ol type="i">
+<li><p>Ni saa nne kamili asubuhi au</p></li>
+<li><p>Ni saa nne kamili usiku.</p></li>
+</ol>
+<h2 id="msamiati-wa-saatime-vocabulary">Msamiati wa Saa/Time Vocabulary</h2>
+<dl>
+<dt>Ni saa</dt>
+<dd><p>the time is</p>
+</dd>
+<dt>na dakika x</dt>
+<dd><p>x minutes past</p>
+</dd>
+<dt>robo</dt>
+<dd><p>quarter</p>
+</dd>
+<dt>nusu</dt>
+<dd><p>half</p>
+</dd>
+<dt>Kamili</dt>
+<dd><p>on the dot</p>
+</dd>
+<dt>Kasoro dakika</dt>
+<dd><p>minutes to</p>
+</dd>
+<dt>kutoka</dt>
+<dd><p>from</p>
+</dd>
+<dt>hadi</dt>
+<dd><p>to</p>
+</dd>
+<dt>mpaka</dt>
+<dd><p>until</p>
+</dd>
+<dt>Anza</dt>
+<dd><p>start</p>
+</dd>
+<dt>maliza</dt>
+<dd><p>finish</p>
+</dd>
+<dt>acha</dt>
+<dd><p>stop</p>
+</dd>
+<dt>pumzika</dt>
+<dd><p>rest</p>
+</dd>
+<dt>Mapema</dt>
+<dd><p>early</p>
+</dd>
+<dt>chelewa</dt>
+<dd><p>to be late</p>
+</dd>
+<dt>muda</dt>
+<dd><p>time/duration</p>
+</dd>
+<dt>mnamo</dt>
+<dd><p>on</p>
+</dd>
+<dt>Kawaida</dt>
+<dd><p>usually</p>
+</dd>
+<dt>mara kwa mara</dt>
+<dd><p>occasionally</p>
+</dd>
+<dt>wakati wa</dt>
+<dd><p>time of</p>
+</dd>
+<dt>chukua</dt>
+<dd><p>take</p>
+</dd>
+<dt>Amka</dt>
+<dd><p>wake up</p>
+</dd>
+<dt>tayarisha</dt>
+<dd><p>prepare</p>
+</dd>
+<dt>starehe</dt>
+<dd><p>relax</p>
+</dd>
+<dt>lala</dt>
+<dd><p>sleep</p>
+</dd>
+</dl>
+<h2 id="mfanoexample">Mfano/Example</h2>
+<p><strong>Swali:</strong> Ni saa ngapi?/What is the time?</p>
+<p><strong>Jibu:</strong> Ni saa X kamili, ni saa x na dakika y, ni saa x kasorobo, ni saa x kasoro dakika y, au</p>
+<p>Sasa hivi ni saa/the time right now is ...</p>
+<blockquote>
+<p><strong>Zoezi I: Ni saa ngapi?</strong> <em>(what is the time?)</em></p>
+</blockquote>
+<p><img src="images/time-z1-1.png" style="width:25.0%" alt="1." /> 1. ____________________</p>
+<p><img src="images/time-z1-2.png" style="width:25.0%" alt="2." /> 2. ____________________</p>
+<p><img src="images/time-z1-3.png" style="width:25.0%" alt="3." /> 3. ____________________</p>
+<p><img src="images/time-z1-4.png" style="width:25.0%" alt="4." /> 4. ____________________</p>
+<p><img src="images/time-z1-5.png" style="width:25.0%" alt="5." /> 5. ____________________</p>
+<p><img src="images/time-z1-6.png" style="width:25.0%" alt="6." /> 6. ____________________</p>
+<p><img src="images/time-z1-7.png" style="width:25.0%" alt="7." /> 7. ____________________</p>
+<p><img src="images/time-z1-8.png" style="width:25.0%" alt="8." /> 8. ____________________</p>
+<p><img src="images/time-z1-9.png" style="width:25.0%" alt="9." /> 9. ____________________</p>
+<blockquote>
+<p><strong>Zoezi II: Ni saa ngapi?</strong></p>
+</blockquote>
+<p><img src="images/time-z2-a.png" style="width:25.0%" alt="A." /> A. ____________________</p>
+<p><img src="images/time-z2-b.png" style="width:25.0%" alt="B." /> B. ____________________</p>
+<p><img src="images/time-z2-c.png" style="width:25.0%" alt="C." /> C. ____________________</p>
+<p><img src="images/time-z2-d.png" style="width:25.0%" alt="D." /> D. ____________________</p>
+<p><img src="images/time-z2-e.png" style="width:25.0%" alt="E." /> E. ____________________</p>
+<p><img src="images/time-z2-f.png" style="width:25.0%" alt="F." /> F. ____________________</p>
+<p><img src="images/time-z2-g.png" style="width:25.0%" alt="G." /> G. ____________________</p>
+<p><img src="images/time-z2-h.png" style="width:25.0%" alt="H." /> H. ____________________</p>
+<p><img src="images/time-z2-i.png" style="width:25.0%" alt="I." /> I. ____________________</p>
+<p><img src="images/time-z2-j.png" style="width:25.0%" alt="J." /> J. ____________________</p>
+<blockquote>
+<p><strong>Zoezi III: Shughuli za Kila Siku</strong></p>
+<p>Katika vikundi vya watu wawili, mwambie mwenzako unapofanya shughuli hizi/in pairs, tell your friend when you perform the following tasks.</p>
+<ol type="i">
+<li><p>Je, kawaida wewe huamka saa ngapi?</p></li>
+<li><p>Je, unakula chakula cha asubuhi lini?</p></li>
+<li><p>Je, unaenda chuoni saa ngapi?</p></li>
+<li><p>Je, wewe hula chakula cha mchana lini?</p></li>
+<li><p>Je, unarudi nyumbani saa ngapi?</p></li>
+<li><p>Kawaida wewe hula chakula cha jioni saa ngapi?</p></li>
+<li><p>Je, wewe hulala lini?</p></li>
+<li><p>Je, madarasa yako robo hii ni saa ngapi?</p></li>
+<li><p>Kawaida wewe husoma kutoka saa ngapi hadi saa ngapi jioni?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi IV: Kutunga sentensi</strong></p>
+<p>Tunga sentensi kumi kwa kutumia msamiati wa saa uliopewa hapo juu/Compose 10 sentences using any 10 time-related vocabulary that you are given above.</p>
+<ol type="i">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi V: Saa na Utamaduni</strong></p>
+<p><strong>Utamaduni wa Afrika Mashariki na Nchi Yako kuhusu Saa/East African vs. your country’s culture on Time. Tumia mtandao/internet kwa zoezi hili.</strong></p>
+<ol type="i">
+<li><p>Je, watu katika nchi yako hula chakula cha asubuhi saa ngapi? Na je, watu wa Afrika Mashariki hula chakula cha asubuhi lini?</p></li>
+<li><p>Je, watoto katika nchi yako huenda shuleni saa ngapi? Je, watoto wa Afrika Mashariki huenda shuleni saa ngapi?</p></li>
+<li><p>Kawaida watu katika nchi yako hula chakula cha mchana saa ngapi? Je, watu katika Afrika Mashariki hula chakula cha mchana lini?</p></li>
+<li><p>Kawaida watu katika nchi yako hula chakula cha Usiku lini?</p></li>
+<li><p>Je, watu katika nchi yako hunywa chai au kahawa lini? Watu wa Afrika Mashariki hunywa chai kila wakati!</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi VI: Kuuliza Maswali Kuhusu Saa</strong></p>
+<ol type="i">
+<li><p>Je, ulisoma kwa masaa mangapi?</p></li>
+<li><p>Ulienda filamuni lini?/saa ngapi?</p></li>
+<li><p>Ulisafiri kwa masaa mangapi?</p></li>
+<li><p>Darasa la Swahili ni kutoka saa ngapi hadi saa ngapi?</p></li>
+<li><p>Je, meza ya lugha ni lini?/saa ngapi?</p></li>
+<li><p>Ulicheza mchezo wa video kwa muda gani?</p></li>
+<li><p>Kawaida wewe hufanya mazoezi kwa muda gani?</p></li>
+<li><p>Karamu itaanza saa ngapi?/lini?</p></li>
+<li><p>Karamu itaisha saa ngapi?/lini?</p></li>
+</ol>
+</blockquote>
+<h1 id="siku-za-wikijuma-days-of-the-week">3. Siku za Wiki/Juma – Days of the Week</h1>
+<h2 id="utanguliziintroduction-1">Utangulizi/Introduction</h2>
+<p>The swahili speakers had interacted with the Arabs for nearly 400 years before the arrival of the europeans in the 19th Century. For this reason, the Arabic culture has had an influence on the Swahili culture and language. A good example of this is on the Swahili days of the week. Friday is considered as the last day of the week and it is the day of worship in Islam. Thus, Saturday becomes the first day of the week. East African Muslims go to the mosque (msikiti) on Friday but their Christian counterparts go to church (kanisa) on Sunday. Owing to this diversity, the East Africans follow the western calendar for their economic activities. Thus, the workdays are Monday through Friday.</p>
+<h2 id="siku-za-wikijuma">Siku za Wiki/Juma</h2>
+<figure>
+<img src="images/days-of-the-week.png" style="width:25.0%" alt="Days of the Week" /><figcaption aria-hidden="true">Days of the Week</figcaption>
+</figure>
+<blockquote>
+<p><strong>Zoezi I: Kuzungumza Kuhusu Siku za Wiki</strong></p>
+<figure>
+<img src="images/nu-arch.png" style="width:25.0%" alt="Weber Arch" /><figcaption aria-hidden="true">Weber Arch</figcaption>
+</figure>
+<p><strong>Swali:</strong> Je, wewe unaenda chuoni siku gani?</p>
+<p><strong>Jibu:</strong> Kawaida mimi huenda chuoni siku tatu kwa wiki: Jumatatu, Jumatano, na Ijumaa. Na wewe je?</p>
+<p><strong>Swali:</strong> Je, una madarasa mangapi kila wiki?</p>
+<p><strong>Jibu:</strong> mimi nina madarasa tisa robo hii: madarasa matatu Jumatatu, matatu Jumatano, na matatu Ijumaa. Na wewe je, una madarasa mangapi robo hii?</p>
+</blockquote>
+<h2 id="je-leo-ni-siku-ganini-siku-gani-leo">Je, leo ni siku gani?/Ni siku gani leo?</h2>
+<p>Unaweza kujibu kwa kusema:</p>
+<p><strong>Swali:</strong> Ni siku gani leo?</p>
+<p><strong>Jibu:</strong> i. Ni Jumatano.</p>
+<p>ii. Leo ni Jumatano.</p>
+<p>iii. Leo ni siku ya Jumatano.</p>
+<blockquote>
+<p><strong>Zoezi II: Hizi ni siku gani?</strong></p>
+<ol type="i">
+<li><p><strong>Juzi</strong> ilikuwa siku gani?</p></li>
+<li><p><strong>Jana</strong> ilikuwa siku gani?</p></li>
+<li><p><strong>Leo</strong> ni siku gani?</p></li>
+<li><p><strong>Kesho</strong> itakuwa siku gani?</p></li>
+<li><p><strong>Kesho kutwa</strong> itakuwa siku gani?</p></li>
+</ol>
+</blockquote>
+<h2 id="sarufigrammar">Sarufi/Grammar</h2>
+<ol type="i">
+<li><p>Ni = is</p></li>
+<li><p>Ilikuwa = it was</p></li>
+<li><p>Itakuwa = it will be</p></li>
+</ol>
+<blockquote>
+<p><strong>Zoezi III: Marudio ya Nyakati/Review of Tenses</strong></p>
+<p>Fill the table of pronouns and tenses given below</p>
+</blockquote>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 22%" />
+<col style="width: 22%" />
+<col style="width: 19%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pronoun</th>
+<th>Kila siku (-hu-)</th>
+<th>Jana (-li-)</th>
+<th>Leo (-na-)</th>
+<th>Kesho (-ta-)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Mimi +ve</p>
+<p>-ve</p></td>
+<td>hukimbia</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Wewe +ve</p>
+<p>-ve</p></td>
+<td></td>
+<td>Ulifanya mazoezi</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>Yeye +ve</p>
+<p>-ve</p></td>
+<td></td>
+<td></td>
+<td>Haendi dukani</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Sisi +ve</p>
+<p>-ve</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Tutapiga picha</td>
+</tr>
+<tr class="odd">
+<td><p>Nyinyi +ve</p>
+<p>-ve</p></td>
+<td></td>
+<td>hamkusoma</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><p>Wao +ve</p>
+<p>-ve</p></td>
+<td>hawapiki</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi IV: Kuzungumza kuhusu wikendi (wanafunzi wawili wawili)</strong></p>
+<p>Swali: Je wewe utafanya nini wikendi?</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th>Ijumaa jioni</th>
+<th>Jumamosi</th>
+<th>Jumapili</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="kalenda-januari-2020">Kalenda – Januari 2020</h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Jumapili</th>
+<th style="text-align: left;">Jumatatu</th>
+<th style="text-align: left;">Jumanne</th>
+<th style="text-align: left;">Jumatano</th>
+<th style="text-align: left;">Alhamisi</th>
+<th style="text-align: left;">Ijumaa</th>
+<th style="text-align: left;">Jumamosi</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">11</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">18</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">22</td>
+<td style="text-align: left;">23</td>
+<td style="text-align: left;">24</td>
+<td style="text-align: left;">25</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">27</td>
+<td style="text-align: left;">28</td>
+<td style="text-align: left;">29</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">31</td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<h2 id="kusema-tarehedate">Kusema tarehe/date</h2>
+<p>Katika Afrika Mashariki, watu husema/huandika tarehe hivi: siku/mwezi/mwaka. Kwa mfano</p>
+<p><strong>Swali:</strong> leo ni tarehe ngapi/gani?</p>
+<p><strong>Jibu:</strong> leo ni 30/1/2020 (tarehe thelathini, mwezi wa Januari, mwaka wa elfu mbili na ishirini)</p>
+<blockquote>
+<p><strong>Zoezi V: Kusema tarehe (watu wawili wawili)</strong></p>
+<p><strong>Swali:</strong> Leo ni tarehe gani?</p>
+<p><strong>Jibu:</strong></p>
+<p><strong>Swali:</strong> Jana ilikuwa tarehe gani?</p>
+<p><strong>Jibu:</strong></p>
+<p><strong>Swali:</strong> Kesho itakuwa tarehe gani?</p>
+<p><strong>Jibu:</strong></p>
+<p><strong>Swali:</strong> Jumamosi itakuwa tarehe gani?</p>
+<p><strong>Jibu:</strong></p>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi VI: Kuandika Ratiba/schedule</strong></p>
+<p><strong>Scenario:</strong> Your imaginary host family in East Africa would like to have a sample of your weekly schedule so that they can prepare to host you during your summer Swahili study abroad program. Use the table below to prepare your sample weekly schedule. Mention at least three activites per day.</p>
+<p>Ratiba ya Wiki</p>
+<table>
+<thead>
+<tr class="header">
+<th>Siku ya wiki</th>
+<th>Tarehe</th>
+<th>Shughuli/Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<h1 id="miezimonths">4. Miezi/Months</h1>
+<p>Kuna njia mbili za kutaja miezi katika Swahili kama ifuatavyo</p>
+<dl>
+<dt>/1. Januari</dt>
+<dd><p>Mwezi wa Kwanza</p>
+</dd>
+<dt>2. Fubruari</dt>
+<dd><p>Mwezi wa pili</p>
+</dd>
+<dt>3. Machi</dt>
+<dd><p>Mwezi wa tatu</p>
+</dd>
+<dt>4. Aprili</dt>
+<dd><p>Mwezi wa nne</p>
+</dd>
+<dt>5. Mei</dt>
+<dd><p>Mwezi wa tano</p>
+</dd>
+<dt>6. Juni</dt>
+<dd><p>Mwezi wa sita</p>
+</dd>
+<dt>7. Julai</dt>
+<dd><p>Mwezi was saba</p>
+</dd>
+<dt>8. Agosti</dt>
+<dd><p>Mwezi wa nane</p>
+</dd>
+<dt>9. Septemba</dt>
+<dd><p>Mwezi wa tisa</p>
+</dd>
+<dt>10. Oktoba</dt>
+<dd><p>Mwezi wa kumi</p>
+</dd>
+<dt>11. Novemba</dt>
+<dd><p>Mwezi wa kumi na moja</p>
+</dd>
+<dt>12. Disemba</dt>
+<dd><p>Mwezi wa Kumi na mbili</p>
+</dd>
+</dl>
+<p><strong>Msamiati kuhusu miezi/Vocabulary related to months</strong></p>
+<dl>
+<dt>Sikukuu</dt>
+<dd><p>holiday</p>
+</dd>
+<dt>sherehe</dt>
+<dd><p>celebration</p>
+</dd>
+<dt>sherehekea</dt>
+<dd><p>celebrate</p>
+</dd>
+<dt>Kila</dt>
+<dd><p>every</p>
+</dd>
+<dt>kawaida</dt>
+<dd><p>usually</p>
+</dd>
+<dt>mara kwa mara</dt>
+<dd><p>occasionally</p>
+</dd>
+<dt>Tarehe</dt>
+<dd><p>date</p>
+</dd>
+<dt>mnamo</dt>
+<dd><p>on</p>
+</dd>
+<dt>siku ya kuzaliwa</dt>
+<dd><p>birthday</p>
+</dd>
+<dt>Zawadi</dt>
+<dd><p>gift</p>
+</dd>
+<dt>keki</dt>
+<dd><p>cake</p>
+</dd>
+<dt>kata</dt>
+<dd><p>cut</p>
+</dd>
+<dt>Wakati wa</dt>
+<dd><p>the time of</p>
+</dd>
+<dt>karamu</dt>
+<dd><p>party</p>
+</dd>
+<dt>fanya au kuwa na karamu</dt>
+<dd><p>have a party</p>
+</dd>
+<dt>Timiza au fikisha</dt>
+<dd><p>attain</p>
+</dd>
+<dt>umri</dt>
+<dd><p>age</p>
+</dd>
+<dt>mwaka</dt>
+<dd><p>year</p>
+</dd>
+<dt>Kadi</dt>
+<dd><p>card</p>
+</dd>
+<dt>maua</dt>
+<dd><p>flowers</p>
+</dd>
+<dt>sikukuu kipenzi</dt>
+<dd><p>favorite holiday</p>
+</dd>
+</dl>
+<p><strong>Zoezi I: Sikukuu Marekani</strong></p>
+<p>Je hizi ni sikukuu gani na husherehekewa mwezi/tarehe gani?</p>
+<table>
+<thead>
+<tr class="header">
+<th>Sikukuu</th>
+<th>Jina la Sikukuu</th>
+<th>Mwezi/ Tarehe</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img src="images/mlk.jpg" style="width:25.0%" alt="Martin Luther King Jr." /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/v-day.jpg" style="width:25.0%" alt="Valentine’s Day" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/st-pats.jpg" style="width:25.0%" alt="St. Patrick’s Day" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/easter.jpg" style="width:25.0%" alt="Easter" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/mothers-day.jpg" style="width:25.0%" alt="Mother’s Day" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/fathers-day.jpg" style="width:25.0%" alt="Father’s Day" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/juneteenth.jpg" style="width:25.0%" alt="Juneteenth" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/4th-july.jpg" style="width:25.0%" alt="4th of July" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/labor-day.jpg" style="width:25.0%" alt="Labor Day" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/halloween.jpg" style="width:25.0%" alt="Halloween" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/thanksgiving.jpg" style="width:25.0%" alt="Thanksgiving" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/hanukkah.jpg" style="width:25.0%" alt="Hanukkah" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/xmas.jpg" style="width:25.0%" alt="Christmas" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><img src="images/kwanzaa.png" style="width:25.0%" alt="Kwanzaa" /></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><img src="images/new-years.jpg" style="width:25.0%" alt="New Years" /></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi II: Kusema kuhusu sikukuu yako kipenzi</strong></p>
+<ol type="i">
+<li><p>Sikuu yako kipenzi ni gani?</p></li>
+<li><p>Sikukuu yako kipenzi ni mwezi gani?</p></li>
+<li><p>Sikuu yako kipenzi ni tarehe gani?</p></li>
+<li><p>Kawaida unafanya nini kusherehekea sikukuu yako kipenzi?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi III: Kusema kuhusu siku yako ya kuzaliwa</strong></p>
+<ol type="i">
+<li><p>Je, wewe ulizaliwa mwezi gani?</p></li>
+<li><p>Ulizaliwa tarehe gani?</p></li>
+<li><p>Je, ulizaliwa mwaka gani?</p></li>
+<li><p>Kwa hiyo tarehe yako ya kuzaliwa ni gani?</p></li>
+<li><p>Sasa una miaka mingapi?</p></li>
+<li><p>Kawaida wewe hufanya nini kusherehekea siku yako ya kuzaliwa?</p></li>
+<li><p>Je, watu katika familia yako walizaliwa lini?</p></li>
+</ol>
+<ol type="a">
+<li><p>Babangu alizaliwa ____________</p></li>
+<li><p>Mamangu alizaliwa ___________</p></li>
+<li><p>Dadangu alizaliwa ______________</p></li>
+<li><p>Kakangu alizaliwa _______________</p></li>
+<li><p>Mbwa au paka wangu alizaliwa _______________________</p></li>
+</ol>
+</blockquote>
+<p><a href="https://www.youtube.com/watch?v=Zb_7TYzLsxs">Wimbo wa Siku ya Kuzaliwa/Happy birthday song in Swahili</a></p>
+<h1 id="mboga-na-matunda">5. Mboga na Matunda</h1>
+<p>Katika Afrika Mashariki, watu wengi ni wakulima. Kwa hiyo, watu hupata mboga na matunda kutoka mashambani. Pia, watu hununua mboga na matunda sokoni. Kuna masoko ya vyakula kama mboga, matunda, na nafaka na masoko ya nguo. Pia, kuna masoko ambayo yanauza vyakula na nguo pamoja. Katika baadhi ya sehemu, kuna siku za soko katika juma/wiki, lakini kuna masoko ambayo yanafunguliwa kila siku. Je, unakumbuka siku za juma?</p>
+<p><strong>Zoezi I: Soko la Vyakula</strong></p>
+<p>Katika picha hizi, tunaona mboga na matunda mbalimbali katika soko la vyakula. Tumia kamusi yako ya Kiswahili/Kiingereza kutaja majina ya mboga na matunda katika picha hizi.</p>
+<figure>
+<img src="images/kenya-market-1.jpg" style="width:75.0%" alt="Picha ya soko la vyakula katika mji wa Ruaka, Kenya" /><figcaption aria-hidden="true"><em>Picha ya soko la vyakula katika mji wa Ruaka, Kenya</em></figcaption>
+</figure>
+<figure>
+<img src="images/kenya-market-2.jpg" style="width:75.0%" alt="Picha ya soko la vyakula katika mji wa Ruaka, Kenya" /><figcaption aria-hidden="true"><em>Picha ya soko la vyakula katika mji wa Ruaka, Kenya</em></figcaption>
+</figure>
+<figure>
+<img src="images/kenya-market-3.jpg" style="width:75.0%" alt="Picha ya soko la vyakula katika mji wa Ruaka, Kenya" /><figcaption aria-hidden="true"><em>Picha ya soko la vyakula katika mji wa Ruaka, Kenya</em></figcaption>
+</figure>
+<p>Mboga Matunda ——- ———</p>
+<blockquote>
+<p><strong>Zoezi II: Mboga na Matunda katika Familia Yangu</strong></p>
+<p>Katika vikundi vya watu wawili wawili, sema watu katika familia yako wanapenda mboga na matunda gani.</p>
+<ol type="i">
+<li>Je, familia yako inapenda mboga gani?</li>
+</ol>
+<ol type="a">
+<li><p>Mamangu hupenda ...</p></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+<ol start="2" type="i">
+<li>Je, familia yako inapenda matunda gani?</li>
+</ol>
+<ol type="a">
+<li></li>
+<li></li>
+<li><p>Kakangu anapenda ...</p></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</blockquote>
+<h2 id="noun-classes-in-swahili-and-fruits-and-vegetables">Noun Classes in Swahili and Fruits and Vegetables</h2>
+<p>In Swahili, all the nouns belong to specific noun classes. Thus, noun classes in Swahili determine whether the sentence is grammatical or not. We will use the different fruits and vegetables that you have identified in the pictures above to practice how to form grammatical sentences in Swahili by observing the rules of different noun classes.</p>
+<p>Generally speaking, nouns are categorized both in their singular and plural forms. The only noun class that is predictable is that of animates (M/WA). We have already looked at a few examples of the nouns belonging to the noun class of animates.</p>
+<p>Here, we shall focus on the following elements/components of a Swahili sentence: Noun Class (NC), Noun Class Marker (NCM), Noun (N), Adjective (ADJ), and Verb (V). See the table below</p>
+<blockquote>
+<p><strong>Zoezi III</strong></p>
+<p>Complete the table below of food items belonging to different noun classes. Note that the verb takes the subject marker (NCM) + Tense Marker (TM) + Verb (V). The adjectives of quantity and quality are marked by the Noun Class (NC) markers with exception to JI/MA in singular form. Also, there is a lot of variation in marking adjectives belonging to N/N noun class.</p>
+</blockquote>
+<table style="width:90%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 8%" />
+<col style="width: 18%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>NC</th>
+<th>NCM</th>
+<th>Noun</th>
+<th>Quantity</th>
+<th><p>Other adjectives</p>
+-zu ri/-baya,; -tam u/-chungu; -refu/fupi</th>
+<th>Verb</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>M</p>
+<p>WA</p></td>
+<td>a-</td>
+<td>samaki</td>
+<td><sup>1</sup> Mmoja</td>
+<td>mzuri</td>
+<td>kaangwa /being fried amekaangwa</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Wa-</td>
+<td>Samaki</td>
+<td><sup>2</sup>Wawili</td>
+<td>wazuri</td>
+<td>wamekaangwa</td>
+</tr>
+<tr class="odd">
+<td><p>M</p>
+<p>MI</p></td>
+<td>u-</td>
+<td>mchungwa</td>
+<td><sup>1</sup>Mmoja</td>
+<td>mrefu</td>
+<td>anguka /fall umeanguka</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>i-</td>
+<td></td>
+<td><sup>3</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Miembe</td>
+<td><sup>4</sup></td>
+<td></td>
+<td>pendeza / be attractive</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>mnazi</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>katwa/ to be cut</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>5</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>mdalasini</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>kauka/dry</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>6</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>mikate</td>
+<td><sup>7</sup></td>
+<td></td>
+<td>nunuliwa/ to be bought</td>
+</tr>
+<tr class="odd">
+<td><p>JI</p>
+<p>MA</p></td>
+<td>li-</td>
+<td>tunda</td>
+<td><sup>1</sup>moja</td>
+<td>tamu</td>
+<td>iva/ be ripe litaiva</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Ya-</td>
+<td>matunda</td>
+<td><sup>8</sup>manane</td>
+<td>matamu</td>
+<td>yataiva</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>mananasi</td>
+<td><sup>9</sup></td>
+<td></td>
+<td>anguka / fall</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>parachichi</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>oza/rot</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>10</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>maboga</td>
+<td><sup>2</sup></td>
+<td></td>
+<td>chogwa<br />
+to be curved</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Maji</td>
+<td></td>
+<td></td>
+<td>nywewa</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Maziwa</td>
+<td></td>
+<td></td>
+<td>Chemka/ boil</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>KI/CH</p>
+<p>VI/VY</p></td>
+<td>ki</td>
+<td>chakula</td>
+<td><sup>1</sup>kimoja</td>
+<td>kizuri</td>
+<td>iva/ get ready kiliiva</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>vi</td>
+<td>vyakula</td>
+<td><sup>2</sup>viwili</td>
+<td>vizuri</td>
+<td>viliiva</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>kinywaji</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>mwagwa/ to be spilled</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>3</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td>ki</td>
+<td>kijiko</td>
+<td><sup>1</sup>kimoja</td>
+<td>kidogo</td>
+<td>kimepotea</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>vi</td>
+<td>Vijiko</td>
+<td><sup>4</sup>Vinne</td>
+<td>vidogo</td>
+<td><p>potea<br />
+get lost</p>
+<p>vimepotea</p></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>Kikombe</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>anguka/ fall</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>5</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>N</p>
+<p>N</p></td>
+<td>i-</td>
+<td>zabibu</td>
+<td><sup>1</sup>moja</td>
+<td>Chu ngu/bitter</td>
+<td>liwa/ to be eaten italiwa</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>Zi-</td>
+<td>zabibu</td>
+<td><sup>6</sup>sita</td>
+<td>Chu ngu/bitter</td>
+<td>zitaliwa</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>kabeji</td>
+<td><sup>7</sup></td>
+<td></td>
+<td>pikwa/ to be cooked</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>karoti</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>nunuliwa/ to be bought</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>8</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td></td>
+<td><sup>1</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Soda</td>
+<td><sup>9</sup></td>
+<td></td>
+<td>mwagika/ get spilled</td>
+</tr>
+<tr class="odd">
+<td><p>U</p>
+<p>N</p></td>
+<td></td>
+<td>Uteo</td>
+<td><sup>1</sup></td>
+<td></td>
+<td>patikana/ to be found</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td>Teo</td>
+<td><sup>2</sup></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><p>U</p>
+<p>U</p></td>
+<td></td>
+<td>uyoga</td>
+<td><sup>1</sup></td>
+<td>mkubwa</td>
+<td>haribika/ get bad</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td></td>
+<td></td>
+<td>ugali</td>
+<td></td>
+<td></td>
+<td>iva/ get ready/ cooked</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sokoni">Sokoni</h2>
+<p><em>Sokoni</em> is a social place where people meet, greet, and have general conversations about what the seller has, what the buyer wants, and how much the items cost. Items at many market places do not have price tags and for that reason, there is always room for bargaining. Thus, we shall learn three important skills that you may require when buying items at the market: inquiring the prices of the food items, bargaining, and requesting the items.</p>
+<h2 id="msamiati-wa-sokonimarketplace-vocabulary">Msamiati wa Sokoni/Marketplace Vocabulary</h2>
+<dl>
+<dt>Muuzaji</dt>
+<dd><p>seller</p>
+</dd>
+<dt>mnunuzi</dt>
+<dd><p>mteja</p>
+</dd>
+<dt>kastoma</dt>
+<dd><p>buyer</p>
+</dd>
+<dt>nunua</dt>
+<dd><p>buy</p>
+</dd>
+<dt>Uza</dt>
+<dd><p>sell</p>
+</dd>
+<dt>bei</dt>
+<dd><p>price</p>
+</dd>
+<dt>ghali</dt>
+<dd><p>expensive</p>
+</dd>
+<dt>Rahisi</dt>
+<dd><p>cheap</p>
+</dd>
+<dt>punguza</dt>
+<dd><p>lower</p>
+</dd>
+<dt>ongeza</dt>
+<dd><p>add</p>
+</dd>
+<dt>Tafadhali</dt>
+<dd><p>please</p>
+</dd>
+<dt>nina</dt>
+<dd><p>I have</p>
+</dd>
+<dt>sina</dt>
+<dd><p>I do not have</p>
+</dd>
+<dt>Agiza</dt>
+<dd><p>order</p>
+</dd>
+<dt>fungu</dt>
+<dd><p>bunch</p>
+</dd>
+<dt>bidhaa</dt>
+<dd><p>items</p>
+</dd>
+<dt>Hitaji</dt>
+<dd><p>require</p>
+</dd>
+<dt>naomba</dt>
+<dd><p>May I have</p>
+</dd>
+<dt>nataka</dt>
+<dd><p>I want</p>
+</dd>
+<dt>Nipatie</dt>
+<dd><p>give me</p>
+</dd>
+<dt>Jumla</dt>
+<dd><p>total</p>
+</dd>
+<dt>shilingi</dt>
+<dd><p>shilling</p>
+</dd>
+<dt>pesa</dt>
+<dd><p>money</p>
+</dd>
+</dl>
+<h2 id="kuuliza-beiinquiring-the-prices">Kuuliza bei/Inquiring the prices</h2>
+<p>Kuna njia tatu za kuuliza bei.</p>
+<ol type="a">
+<li><p>X ni bei gani?</p></li>
+<li><p>X ni shilingi ngapi?</p></li>
+<li><p>Unauzaje X</p></li>
+</ol>
+<h2 id="kuagizaordering-or-requesting-for-the-items">Kuagiza/ordering or requesting for the items</h2>
+<p>Kuna njia tatu za kuagiza bidhaa.</p>
+<ol type="a">
+<li><p>Ninaomba X moja, mbili, tatu ...</p></li>
+<li><p>Ninataka X mmoja, miwili, mitatu ...</p></li>
+<li><p>Nipatie X kimoja, viwili, vitatu ...</p></li>
+</ol>
+<p>Note that you can substitute X with different food items and the adjectives of quantity will change depending on their noun classes</p>
+<h2 id="mazungumzo-i">Mazungumzo I</h2>
+<p>Muuzaji: Hujambo Kastoma!</p>
+<p>Kastoma: Sijambo, bwana! Habari za mchana?</p>
+<p>Muuzaji: Salama. Karibu katika kibanda changu. Nikuuzie nini leo?</p>
+<p>Kastoma: Asante. Ndizi ni bei gani?</p>
+<p>Muuzaji: Ndizi fungu moja ni shilingi mia moja.</p>
+<p>Kastoma: Sawa. Nitahitaji machungwa pia. Unauzaje machungwa?</p>
+<p>Muuzaji: Bei ya machungwa ni matatu kwa shilingi tisini.</p>
+<p>Kastoma: Safi. Nitahitaji fungu moja la ndizi na machungwa matatu.</p>
+<p>Muuzaji: Jumla ni shilingi mia moja na tisini.</p>
+<p>Kastoma: Hizi hapa pesa.</p>
+<p>Muuzaji: Asante sana. Hivi hapa vitu vyako.</p>
+<p>Kastoma: Asante sana. Kwaheri.</p>
+<p>Muuzaji: Kwaheri na karibu tena.</p>
+<blockquote>
+<p><strong>Zoezi IV: Mazungumzo ya Sokoni</strong></p>
+<p>In pairs, follow the example of the dialogue given above to practice to inquire the prices of different fruits and vegetables from the pictures that you used ealier in the unit as well as requesting them by mentioning the number of items that you require. One of you should play the role of the seller while the other plays the customer’s role. You may want to switch the roles such that each of you practices to play both roles.</p>
+</blockquote>
+<h2 id="kupatana-beiagreeing-on-the-price">Kupatana Bei/Agreeing on the Price</h2>
+<p>Often times, items at the open air markets do not have price tags. For this reason, you must learn how to bargain to have the prices of the items reduced for you. However, the bargaining should be reasonable. For instance, you could ask the seller to reduce by 30 shillings if an item is being sold at 100 shillings.</p>
+<h2 id="mazungumzo-ii">Mazungumzo II</h2>
+<p>Muuzaji: Karibu karibu karibu, Kastoma!!! Machungwa, maembe, ndizi, na kabeji kwa bei rahisi!</p>
+<p>Kastoma: Hujambo! Unauzaje nyanya?</p>
+<p>Muuzaji: Sijambo, dada! Karibu sana. Nyanya ni shilingi mia mbili kwa kila fungu.</p>
+<p>Kastoma: Lo! Ni ghali sana. Punguza bei tafadhali.</p>
+<p>Muuzaji: Nyanya zangu ni freshi kabisa na kubwa, dada.</p>
+<p>Kastoma: Ndiyo, lakini sina shilingi mia mbili. Nina shilingi mia moja na hamsini.</p>
+<p>Muuzaji: Ongeza shilingi thelathini.</p>
+<p>Kastoma: Sina shilingi thelathini lakini ninaweza kutoa shilingi mia moja na sabini.</p>
+<p>Muuzaji: Sawa, nipatie shilingi mia moja na sabini.</p>
+<p>Kastoma: Asante sana. Pesa hapa.</p>
+<p>Muuzaji: Nyanya zako hapa. Asante na karibu tena.</p>
+<p>Kastoma: Kwaheri!</p>
+<blockquote>
+<p><strong>Zoezi V: Mazungumzo ya Kupatana Bei</strong></p>
+<p>In pairs, follow the example of the dialogue given above to practice to inquire the prices of different fruits and vegetables from the pictures that you used ealier in the unit as well as bargaining to have their prices reduced. One of you should play the role of the seller while the other plays the customer’s role. You may want to switch the roles such that each of you practices to play both roles.</p>
+</blockquote>
+<h1 id="vyakula-na-vinywajifood-and-drinks">6. Vyakula na Vinywaji/Food and Drinks</h1>
+<h2 id="msamiativocabulary">Msamiati/Vocabulary</h2>
+<dl>
+<dt>Chakula</dt>
+<dd><p>food</p>
+</dd>
+<dt>kula</dt>
+<dd><p>to eat</p>
+</dd>
+<dt>pika</dt>
+<dd><p>cook</p>
+</dd>
+<dt>mpishi</dt>
+<dd><p>cook</p>
+</dd>
+<dt>Oka</dt>
+<dd><p>bake</p>
+</dd>
+<dt>chemsha</dt>
+<dd><p>boil</p>
+</dd>
+<dt>kaanga</dt>
+<dd><p>fry</p>
+</dd>
+<dt>choma</dt>
+<dd><p>roast</p>
+</dd>
+<dt>-bichi</dt>
+<dd><p>raw</p>
+</dd>
+<dt>-bivu</dt>
+<dd><p>ripe</p>
+</dd>
+<dt>tayari</dt>
+<dd><p>ready</p>
+</dd>
+<dt>tayarisha</dt>
+<dd><p>prepare</p>
+</dd>
+<dt>Taka</dt>
+<dd><p>want</p>
+</dd>
+<dt>hitaji</dt>
+<dd><p>require</p>
+</dd>
+<dt>kutoka</dt>
+<dd><p>from</p>
+</dd>
+<dt>hadi</dt>
+<dd><p>to</p>
+</dd>
+<dt>Nunua</dt>
+<dd><p>buy</p>
+</dd>
+<dt>menya</dt>
+<dd><p>peel</p>
+</dd>
+<dt>chambua</dt>
+<dd><p>sort</p>
+</dd>
+<dt>kata</dt>
+<dd><p>cut</p>
+</dd>
+<dt>uma</dt>
+<dd><p>bite</p>
+</dd>
+<dt>Tamu</dt>
+<dd><p>sweet</p>
+</dd>
+<dt>chachu</dt>
+<dd><p>sour</p>
+</dd>
+<dt>viungo</dt>
+<dd><p>spices</p>
+</dd>
+</dl>
+<p>Hapa kuna picha za vyakula kutoka Afrika Mashariki. Mwalimu/rafiki atakwambia majina ya vyakula hivi kwa Kiswahili.</p>
+<h2 id="vyakula">Vyakula</h2>
+<figure>
+<img src="images/food-1.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-2.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-3.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-4.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-5.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-6.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-7.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-8.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-9.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-10.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-11.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-12.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-13.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-14.png" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-15.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-16.jpg" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-17.png" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-18.png" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<figure>
+<img src="images/food-19.png" style="width:50.0%" alt="Food Item" /><figcaption aria-hidden="true">Food Item</figcaption>
+</figure>
+<blockquote>
+<p><strong>Zoezi I: Majina ya Vyakula</strong></p>
+<p>Tumia kamusi yako kuangalia majina ya vyakula vingine ambavyo haviko kwenye picha/Use your dictionary to look up the names of other types of food not included in the pictures above.</p>
+</blockquote>
+<h2 id="vinywaji-maarufu-afrika-mashariki">Vinywaji Maarufu Afrika Mashariki</h2>
+<p>Hapa kuna picha za vinywaji maarufu Afrika Mashariki (Insert pictures)</p>
+<blockquote>
+<p><strong>Zoezi II: Majina ya Vinywaji</strong></p>
+<p>Tumia kamusi yako kuangalia majina ya vinywaji vingine ambavyo haviko kwenye picha/Use your dictionary to look up the names of other types of drinks not included in the pictures shown above.</p>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi III: Vyakula na Vinywaji katika Familia Yangu</strong></p>
+<p>Je, familia yako inapenda vyakula na vinywaji gani?</p>
+<p>Je, wewe unapenda chakula na vinywaji gani kwa:</p>
+<ol type="a">
+<li><p>Chakula cha asubuhi</p></li>
+<li><p>Chakula cha mchana</p></li>
+<li><p>Chakula cha jioni/usiku</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi IV: Familia ya Afrika Mashariki</strong></p>
+<p>Your host family in East Africa would like to know your preferences for food/drinks at different times of the day for them to prepare for your arrival. Fill out the following table by mentioning three types of food/drinks/fruits for each time of the day and indicate the time of the day that you usually have that meal.</p>
+</blockquote>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Time of the day</th>
+<th style="text-align: left;">Saa ngapi?</th>
+<th style="text-align: left;">Vyakula/vinywaji/matunda</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><img src="images/blank-clock.png" style="width:50.0%" /></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><img src="images/blank-clock.png" style="width:50.0%" /></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><img src="images/blank-clock.png" style="width:50.0%" /></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><img src="images/blank-clock.png" style="width:50.0%" /></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Zoezi V: Kazi ya Vikundi</strong></p>
+<p>Work in pairs to fill out the venn diagrams shown below with your preferences for different types of food/drinks/fruits at different times of the day. In the intersection of each venn diagram, list what both of you have in common.</p>
+</blockquote>
+<ol type="i">
+<li>Chakula cha asubuhi</li>
+</ol>
+<figure>
+<img src="images/fd-venn-1.png" style="width:75.0%" alt="Chakula cha asubuhi" /><figcaption aria-hidden="true">Chakula cha asubuhi</figcaption>
+</figure>
+<ol start="2" type="i">
+<li>Chakula cha mchana</li>
+</ol>
+<figure>
+<img src="images/fd-venn-2.png" style="width:75.0%" alt="Chakula cha mchana" /><figcaption aria-hidden="true">Chakula cha mchana</figcaption>
+</figure>
+<ol start="3" type="i">
+<li>Chakula cha jioni/usiku</li>
+</ol>
+<figure>
+<img src="images/fd-venn-3.png" style="width:75.0%" alt="Chakula cha jioni/usiku" /><figcaption aria-hidden="true">Chakula cha jioni/usiku</figcaption>
+</figure>
+<blockquote>
+<p><strong>Zoezi VI: Chakula Changu Kipenzi</strong></p>
+<ol type="i">
+<li><p>Je, wewe unapenda chakula gani zaidi?</p></li>
+<li><p>Je, unahitaji nini kupika chakula hiki?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi VII: Kutunga Sentensi</strong></p>
+<p>Tunga sentensi kwa kutumia maneno 10 uliyojifunza katika mada hii/Construct 10 sentences using any 10 words that you have learned in this topic</p>
+<ol type="i">
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ol>
+</blockquote>
+<h1 id="kahawani-au-mgahawaniat-the-restaurant">7. kahawani au Mgahawani/At the Restaurant</h1>
+<h2 id="menu">Menu</h2>
+<p>Hapa chini, kuna menu ya Mkahawa wa Kilimanjaro uliopo jijini Nairobi.</p>
+<figure>
+<img src="images/menu-1.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<figure>
+<img src="images/menu-2.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<figure>
+<img src="images/menu-3.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<figure>
+<img src="images/menu-4.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<figure>
+<img src="images/menu-5.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<figure>
+<img src="images/menu-6.png" style="width:50.0%" alt="Menu Page" /><figcaption aria-hidden="true">Menu Page</figcaption>
+</figure>
+<h2 id="msamiati-wa-mkahawanirestaurant-vocabulary">Msamiati wa Mkahawani/Restaurant Vocabulary</h2>
+<dl>
+<dt>Mhudumu</dt>
+<dd><p>attendant</p>
+</dd>
+<dt>mteja</dt>
+<dd><p>customer</p>
+</dd>
+<dt>menu</dt>
+<dd><p>menu</p>
+</dd>
+<dt>agiza</dt>
+<dd><p>order</p>
+</dd>
+<dt>meza</dt>
+<dd><p>table</p>
+</dd>
+<dt>kiti</dt>
+<dd><p>seat</p>
+</dd>
+<dt>keti</dt>
+<dd><p>sit down</p>
+</dd>
+<dt>nawa</dt>
+<dd><p>wash hands</p>
+</dd>
+<dt>msalani</dt>
+<dd><p>bathroom</p>
+</dd>
+<dt>ndani</dt>
+<dd><p>inside</p>
+</dd>
+<dt>Nje</dt>
+<dd><p>outside</p>
+</dd>
+<dt>barazani</dt>
+<dd><p>balcony</p>
+</dd>
+<dt>kinywaji</dt>
+<dd><p>drink (N)</p>
+</dd>
+<dt>kunywa</dt>
+<dd><p>drink (V)</p>
+</dd>
+<dt>Kinywaji baridi</dt>
+<dd><p>cold drink</p>
+</dd>
+<dt>kula</dt>
+<dd><p>eat</p>
+</dd>
+<dt>kinywaji moto</dt>
+<dd><p>hot drink</p>
+</dd>
+<dt>beba</dt>
+<dd><p>carry</p>
+</dd>
+<dt>funga</dt>
+<dd><p>wrap</p>
+</dd>
+<dt>lete</dt>
+<dd><p>bring</p>
+</dd>
+<dt>hisi njaa</dt>
+<dd><p>feel hungry</p>
+</dd>
+<dt>hisi kiu</dt>
+<dd><p>feel thirsty</p>
+</dd>
+</dl>
+<h2 id="mazungumzo-i-kununua-chakula-cha-asubuhi">Mazungumzo I: Kununua Chakula cha Asubuhi</h2>
+<p>Mhudumu: Hujambo kastoma! Habari za asubuhi?</p>
+<p>Kastoma: Sijambo, asante. Salama. U hali gani?</p>
+<p>Mhudumu: Salama sana. Karibu katika Kilimanjaro. Utahitaji meza ya watu wangapi?</p>
+<p>Kastoma: Asante sana. Meza ya watu wawili itanifaa. Mna chakula gani cha asubuhi?</p>
+<p>Mhudumu: Sawa. Nifuate mezani. <em>(baada ya kuketi)</em> Nitakupa menu uangalie vyakula vyetu vya asubuhi. Nitarudi sasa hivi.</p>
+<p>Kastoma: Asante sana. <em>(baada ya kuangalia menu)</em>. Mhudumu!</p>
+<p>Mhudumu: Naam, bwana.</p>
+<p>Kastoma: Naomba <em>full breakfast</em>.</p>
+<p>Mhudumu: Safi sana. Nitakuletea baada ya dakika chache.</p>
+<p>Mhudumu: Karibu chakula.</p>
+<p>Kastoma: Asante sana … baada ya kula … je, ninaweza kulipa kwa <em>M-pesa</em>?</p>
+<p>Mhudumu: Bila shaka. <em>(kastoma analipa)</em></p>
+<p>Kastoma: Asante sana kwa huduma nzuri sana. Nimefurahia chakula.</p>
+<p>Mhudumu: Karibu tena. Asante kwa bakshishi (tip). Uwe na siku njema</p>
+<p>Kastoma: Karibu na Kwaheri, uwe na siku njema pia.</p>
+<blockquote>
+<p><strong>Zoezi I</strong></p>
+<ol type="1">
+<li><p>Jina lingine la kastoma ni gani kwa Kiswahili?</p></li>
+<li><p>Je, kastoma alihitaji meza ya watu wangapi?</p></li>
+<li><p>Kastoma alikula vyakula gani kwa Kiswahili?</p></li>
+<li><p>Bei ya chakula cha asubuhi alichokula kastoma ni gani?</p></li>
+</ol>
+<ol type="a">
+<li><p>Kwa shilingi za Kenya?</p></li>
+<li><p>Kwa dola za Marekani?</p></li>
+</ol>
+<ol start="5" type="1">
+<li><p>Wewe ungekula chakula gani cha asubuhi katika Mkahawa wa Kilimanjaro?</p></li>
+<li><p>Tafiti mtandaoni kuhusu M-pesa ni nini?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi II: Kazi ya Vikundi</strong></p>
+<p>Katika vikundi vya watu wawili, fanya mazoezi ya kuagiza vyakula vya mchana/usiku katika Mkahawa wa Kilimajaro kwa Kiswahili. Tumia maneno kumi kutoka kwenye msamiati wa mkahawani uliyopewa hapo juu.</p>
+</blockquote>
+<h1 id="rangicolors">8. Rangi/Colors</h1>
+<h2 id="majina-ya-rangi-kwa-kiswahili">Majina ya Rangi kwa Kiswahili</h2>
+<p>Rangi nyeusi</p>
+<p>Rangi nyeupe</p>
+<p><span class="r">Rangi nyekundu</span></p>
+<p><span class="g">Rangi ya kijani</span></p>
+<p><span class="y">Rangi ya manjano</span></p>
+<p><span class="gr">Rangi ya kijivu</span></p>
+<p><span class="b">Rangi ya samawati</span></p>
+<p><span class="pi">Rangi ya waridi</span></p>
+<p><span class="p">Rangi ya zambarau</span></p>
+<p><span class="br">Rangi ya kahawia</span></p>
+<p><span class="o">Rangi ya machungwa</span></p>
+<blockquote>
+<p><strong>Zoezi I: Rangi katika Familia Yangu</strong></p>
+<ol type="i">
+<li><p>Je, wewe unapenda rangi gani?</p></li>
+<li><p>Familia yako inapenda rangi gani</p></li>
+</ol>
+<ol type="a">
+<li><p>Babangu anapenda …</p></li>
+<li><p>Mamangu anapenda …</p></li>
+<li><p>Dadangu anapenda …</p></li>
+<li><p>Kakangu hupenda …</p></li>
+</ol>
+<ol start="3" type="i">
+<li><p>Je, una mnyama wa nyumbani?</p></li>
+<li><p>Mnyama wako wa nyumbani ana rangi gani?</p></li>
+<li><p>Rangi za chuo chako ni gani?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi II: Rangi za Bendera</strong></p>
+<p><img src="images/us-flag.png" style="width:25.0%" /></p>
+<ol type="i">
+<li><p>Hii ni bendera ya ________________</p></li>
+<li><p>Bendera ya _______ ina rangi ngapi?</p></li>
+<li><p>Bendera ina rangi gani?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi III</strong></p>
+<ol type="i">
+<li><p>Je, wewe unatoka jimbo/nchi gani?</p></li>
+<li><p>Bendera ya jimbo lako/nchi yako ina rangi ngapi?</p></li>
+<li><p>Bendera ya jimbo lako/nchi yako ina rangi gani?</p></li>
+</ol>
+</blockquote>
+<blockquote>
+<p><strong>Zoezi IV: Bendera za Afrika Mashariki?</strong></p>
+<p>Sema kuhusu Bendera za Afrika Mashariki zifuatazo kwa kuzingatia:</p>
+<ol type="1">
+<li><p>Hii ni bendera ya nchi gani?</p></li>
+<li><p>Bendera ina rangi ngapi?</p></li>
+<li><p>Bendera ina rangi gani?</p></li>
+<li><p>Rangi zina maana gani?</p></li>
+</ol>
+</blockquote>
+<figure>
+<img src="images/flag-1.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+<figure>
+<img src="images/flag-2.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+<figure>
+<img src="images/flag-3.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+<figure>
+<img src="images/flag-4.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+<figure>
+<img src="images/flag-5.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+<figure>
+<img src="images/flag-6.png" style="width:25.0%" alt="Flag" /><figcaption aria-hidden="true">Flag</figcaption>
+</figure>
+</body>
+</html>
